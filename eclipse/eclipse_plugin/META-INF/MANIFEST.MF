@@ -1,0 +1,64 @@
+Manifest-Version: 1.0
+Created-By: 1.8.0 (IBM Corporation)
+
+Name: plugins/com.ibm.appscan.scans.client_1.0.0.201806261734.jar
+SHA-256-Digest: MCr5kXnO96SYa25nbRR0rmVcjDl1RUeV0X9hqRQpi+0=
+
+Name: plugins/com.ibm.appscan.assessment_1.0.0.201806261734.jar
+SHA-256-Digest: DPSaHtewyi0t3SxZ8zjoT8zyP1+vrILtRRl9oGNt+aQ=
+
+Name: plugins/com.ibm.appscan.reporting_1.0.0.201806261734.jar
+SHA-256-Digest: fjJN863TPKydj/iod4wLlucodl7FpKf0h7Au/chGLlk=
+
+Name: content.xml.xz
+SHA-256-Digest: IxvMai0RoMBvFyp2mdwBzwEwdmqmdctbYBh/rQGD6pM=
+
+Name: plugins/com.ibm.appscan.cli.cloud.auth_1.0.0.201806261734.jar
+SHA-256-Digest: pqP0fr2RTpvVgUKKDZGnScf4k+V5+/Pkb047HjQx61I=
+
+Name: plugins/com.ibm.appscan.eclipse.plugin_1.0.0.201806261734.jar
+SHA-256-Digest: uNAQ+rwOaYwrlVNl8ibqJKIWjh9s09PQpVSicPkvxlY=
+
+Name: artifacts.xml.xz
+SHA-256-Digest: WaNWc90A8Xhk1ZzFEMzS3K/GOC3JMNU2H6wqkqjS9sg=
+
+Name: plugins/com.ibm.appscan.common.eclipse_1.0.0.201806261734.jar
+SHA-256-Digest: 77uLv2hbaAHnwMcjH310e+52qWT7PQjWuSE9fOm6t1A=
+
+Name: plugins/com.ibm.appscan.ml.combiner_1.0.0.201806261734.jar
+SHA-256-Digest: t/LsDOUqVtfa4KGG7Dl0YFVEW6VlqJfiqOvuctbLQP8=
+
+Name: features/com.ibm.appscan.eclipse.plugin.feature_1.0.0.2018062617
+ 34.jar
+SHA-256-Digest: vjpYoV4aWzFa9GCh3rR4yHMoZqsemOvp9SCBrkreVnc=
+
+Name: plugins/com.ibm.appscan.exclude_1.0.0.201806261734.jar
+SHA-256-Digest: 062ah+v+YuWZ2adoQS5bk4sS/fsOI6KMOc+NetCMbLE=
+
+Name: plugins/com.ibm.appscan.cli.common_1.0.0.201806261734.jar
+SHA-256-Digest: rY39ETWS80LrwB1kSt+eMppTC25mXHUBSU45jmc373U=
+
+Name: artifacts.jar
+SHA-256-Digest: xjuHzurp2Ci+nQL4ro8SEf+QcRo4rdcbytsyuhsQoEE=
+
+Name: p2.index
+SHA-256-Digest: tbdaOgVUWTtUt7IcECE+LYQoDhDnAjGJjgTZ6lyq5ZI=
+
+Name: plugins/com.ibm.appscan.kb_1.0.0.201806261734.jar
+SHA-256-Digest: 0f/eVxsx1Ql0sN3PQ5ZH9QAR46UVCUgIZ4qtcE/knYA=
+
+Name: plugins/com.ibm.appscan.vdb_1.0.0.201806261734.jar
+SHA-256-Digest: l2YjSxt2qujO6TTD8enMqfGX4Y5DLNyJ0qUJu6ZdAoM=
+
+Name: content.jar
+SHA-256-Digest: kOquS5QFi0VSuR8uCeeMEN8Cm3f6Ijhm3k2zNPHy9t4=
+
+Name: plugins/com.ibm.security.annotation_1.0.0.201806261734.jar
+SHA-256-Digest: 9uw9dDD8qkCZYYuC205ffmumN/DWQjYFbdX3UFvZ7f4=
+
+Name: plugins/com.ibm.appscan.result_1.0.0.201806261734.jar
+SHA-256-Digest: aDH69uCDUE9plIs1AhrX4Tf9miE35ukO1wizmzFiMj4=
+
+Name: plugins/com.ibm.appscan.common_1.0.0.201806261734.jar
+SHA-256-Digest: P/FSoKowxoiqqTgwsNKgL1Vk5TfAqo68jcHGLecm0xs=
+
