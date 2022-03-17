@@ -17,3 +17,12 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+
+
+- task: HCLAppScanOnCloud@2
+  inputs:
+    AppSecTestService: 'ASoC_Stage'
+    applications: '8994d026-1dd5-4642-9c0e-ec775ae97e66'
+    scanname: 'TFS-205_MAST'
+    scantype: 'mobile'
+    appFile: 'C:\Test data\demo.apk'
