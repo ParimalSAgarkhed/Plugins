@@ -26,3 +26,25 @@ steps:
     scanname: 'TFS-205_MAST'
     scantype: 'mobile'
     appFile: 'C:\Test data\demo.apk'
+
+- task: HCLAppScanOnCloud@2
+  inputs:
+    AppSecTestService: 'ASoC_Stage'
+    applications: '8994d026-1dd5-4642-9c0e-ec775ae97e66'
+    scanname: 'TFS_DAST_Latest_205'
+    scantype: 'dynamic'
+    dynamicType: 'DAST'
+    scanURL: 'http://demo.testfire.net/'
+    type: 'production'
+    loginMethod: 'None'
+    network: 'private'
+    optimization: 'fastest'
+
+- task: HCLAppScanOnCloud@2
+  inputs:
+    AppSecTestService: 'ASoC_Stage'
+    applications: '8994d026-1dd5-4642-9c0e-ec775ae97e66'
+    scanname: 'TFS_SAST_205'
+    scantype: 'static'
+    scanloc: 'Altoro_WAR'
+    ScanSpeedOptions: 'simple'
