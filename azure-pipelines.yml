@@ -14,21 +14,6 @@ steps:
   displayName: 'Run a one-line script'
 
 - task: HCLAppScanPluginsQA.ApplicationSecurity-VSTS.custom-asoc-task.HCLAppScanOnCloud@2
-  displayName: 'Run HCL AppScan on Cloud Security Test'
-  inputs:
-    AppSecTestService: 'ASoC_Stage'
-    applications: '8994d026-1dd5-4642-9c0e-ec775ae97e66'
-    scanname: 'TFS_DAST_205_latest'
-    scantype: dynamic
-    scanURL: 'http://demo.testfire.net'
-    OpenSourceScanOnly: false
-    ScanSpeedOptions: simple
-    loginMethod: None
-    network: public
-    optimization: fastest
-
-
-- task: HCLAppScanPluginsQA.ApplicationSecurity-VSTS.custom-asoc-task.HCLAppScanOnCloud@2
   displayName: 'Run HCL AppScan on Cloud Security Test copy'
   inputs:
     AppSecTestService: 'ASoC_Stage'
@@ -41,6 +26,19 @@ steps:
     network: public
     optimization: fastest
 
+- task: HCLAppScanPluginsQA.ApplicationSecurity-VSTS.custom-asoc-task.HCLAppScanOnCloud@2
+  displayName: 'Run HCL AppScan on Cloud Security Test'
+  inputs:
+    AppSecTestService: 'ASoC_Stage'
+    applications: '8994d026-1dd5-4642-9c0e-ec775ae97e66'
+    scanname: 'TFS_DAST_205_latest'
+    scantype: dynamic
+    scanURL: 'http://demo.testfire.net'
+    OpenSourceScanOnly: false
+    ScanSpeedOptions: simple
+    loginMethod: None
+    network: public
+    optimization: fastest
 
 - task: HCLAppScanPluginsQA.ApplicationSecurity-VSTS.custom-asoc-task.HCLAppScanOnCloud@2
   displayName: 'Run HCL AppScan on Cloud Security Test copy copy'
