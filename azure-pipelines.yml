@@ -26,3 +26,32 @@ steps:
     loginMethod: None
     network: public
     optimization: fastest
+
+
+- task: HCLTechnologies.ApplicationSecurity-VSTS.custom-asoc-task.HCLAppScanOnCloud@2
+  displayName: 'Run HCL AppScan on Cloud Security Test copy'
+  inputs:
+    AppSecTestService: 'ASoC_Stage'
+    applications: '8994d026-1dd5-4642-9c0e-ec775ae97e66'
+    scanname: 'TFS_SAST_205_latest'
+    scanloc: 'Altoro_WAR'
+    OpenSourceScanOnly: false
+    ScanSpeedOptions: simple
+    loginMethod: None
+    network: public
+    optimization: fastest
+
+
+- task: HCLTechnologies.ApplicationSecurity-VSTS.custom-asoc-task.HCLAppScanOnCloud@2
+  displayName: 'Run HCL AppScan on Cloud Security Test copy copy'
+  inputs:
+    AppSecTestService: 'ASoC_Stage'
+    applications: '8994d026-1dd5-4642-9c0e-ec775ae97e66'
+    scanname: 'TFS_MAST_205_latest'
+    scantype: mobile
+    appFile: 'C:\Test data\demo.apk'
+    OpenSourceScanOnly: false
+    ScanSpeedOptions: simple
+    loginMethod: None
+    network: public
+    optimization: fastest
