@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  name: default
+  name: TFS_206_Agent
 
 steps:
 - script: echo Hello, world!
