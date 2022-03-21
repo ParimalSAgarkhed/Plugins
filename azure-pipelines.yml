@@ -13,38 +13,16 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
-
-
-- task: HCLAppScanOnCloud@2
+- task: HCLTechnologies.ApplicationSecurity-VSTS.custom-asoc-task.HCLAppScanOnCloud@2
+  displayName: 'Run HCL AppScan on Cloud Security Test'
   inputs:
     AppSecTestService: 'ASoC_Stage'
     applications: '8994d026-1dd5-4642-9c0e-ec775ae97e66'
-    scanname: 'TFS_DAST_YAML_205'
-    scantype: 'dynamic'
-    dynamicType: 'DAST'
-    scanURL: 'http://demo.testfire.net/'
-    type: 'production'
-    loginMethod: 'None'
-    network: 'private'
-    optimization: 'fastest'
-
-- task: HCLAppScanOnCloud@2
-  inputs:
-    AppSecTestService: 'ASoC_Stage'
-    applications: '8994d026-1dd5-4642-9c0e-ec775ae97e66'
-    scanname: 'TFS_SAST_YAML_205'
-    scantype: 'static'
-    scanloc: 'Altoro_WAR'
-    ScanSpeedOptions: 'simple'
-
-- task: HCLAppScanOnCloud@2
-  inputs:
-    AppSecTestService: 'ASoC_Stage'
-    applications: '8994d026-1dd5-4642-9c0e-ec775ae97e66'
-    scanname: 'TFS-205_MAST'
-    scantype: 'mobile'
-    appFile: 'C:\Test data\demo.apk'
+    scanname: 'TFS_DAST_205_latest'
+    scantype: dynamic
+    scanURL: 'http://demo.testfire.net'
+    OpenSourceScanOnly: false
+    ScanSpeedOptions: simple
+    loginMethod: None
+    network: public
+    optimization: fastest
