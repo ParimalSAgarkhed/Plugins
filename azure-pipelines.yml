@@ -13,18 +13,6 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
-- task: HCLAppScanPluginsQA.ApplicationSecurity-VSTS.custom-asoc-task.HCLAppScanOnCloud@2
-  displayName: 'Run HCL AppScan on Cloud Security Test'
-  inputs:
-    AppSecTestService: 'ASoC_Stage'
-    applications: '8994d026-1dd5-4642-9c0e-ec775ae97e66'
-    scantype: dynamic
-    scanURL: 'http://demo.testfire.net'
-    OpenSourceScanOnly: false
-    ScanSpeedOptions: simple
-    type: production
-    optimization: fastest
-
 
 - task: HCLAppScanPluginsQA.ApplicationSecurity-VSTS.custom-asoc-task.HCLAppScanOnCloud@2
   displayName: 'Run HCL AppScan on Cloud Security Test copy'
