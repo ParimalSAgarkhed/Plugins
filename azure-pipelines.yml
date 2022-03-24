@@ -8,6 +8,7 @@ trigger:
 
 stages:
   - stage: Security_Test
+    displayName: 'Stage1'
     jobs:
       - job: execSecurityTest
         pool:
@@ -27,4 +28,23 @@ stages:
             network: 'public'
             optimization: 'fastest'
             
+  - stage: Security_Test1
+    displayName: 'Stage2'
+    jobs:
+        - job: execSecurityTest1
+          pool:
+            name: TFS_206_Agent
 
+          steps:
+          - task: HCLAppScanOnCloud@2
+            inputs:
+              AppSecTestService: 'ASoC_Prod'
+              applications: '92abe340-b3cd-4267-afa2-6e9f1e0b49dd'
+              scanname: 'DTF_Rel_Pip'
+              scantype: 'dynamic'
+              scanURL: 'http://demo.testfire.net?mode=demo'
+              dynamicType: 'DAST'
+              type: 'production'
+              loginMethod: 'None'
+              network: 'public'
+              optimization: 'fastest'
