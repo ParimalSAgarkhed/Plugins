@@ -14,17 +14,17 @@ stages:
           name: TFS_206_Agent
 
         steps:
-        - task: HCLAppScanPluginsQA.ApplicationSecurity-VSTS.custom-asoc-task.HCLAppScanOnCloud@2
-          displayName: 'Run HCL AppScan on Cloud Security Test'
+        - task: HCLAppScanOnCloud@2
           inputs:
-            AppSecTestService: 'ASoC_Stage'
-            applications: '8994d026-1dd5-4642-9c0e-ec775ae97e66'
-            scanname: 'DAST_201'
-            scantype: dynamic
-            scanURL: 'http://demo.testfire.net'
-            OpenSourceScanOnly: false
-            ScanSpeedOptions: simple
-            type: production
-            optimization: fastest
+            AppSecTestService: 'ASoC_Prod'
+            applications: '92abe340-b3cd-4267-afa2-6e9f1e0b49dd'
+            scanname: 'DTF_Rel_Pip'
+            scantype: 'dynamic'
+            scanURL: 'http://demo.testfire.net?mode=demo'
+            dynamicType: 'DAST'
+            type: 'production'
+            loginMethod: 'None'
+            network: 'public'
+            optimization: 'fastest'
             
 
