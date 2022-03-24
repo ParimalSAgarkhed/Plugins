@@ -14,9 +14,6 @@ stages:
           name: TFS_206_Agent
 
         steps:
-        - script: echo Hello, world!
-        displayName: 'Run a one-line script'
-
         - task: HCLAppScanPluginsQA.ApplicationSecurity-VSTS.custom-asoc-task.HCLAppScanOnCloud@2
         displayName: 'Run HCL AppScan on Cloud Security Test'
         inputs:
