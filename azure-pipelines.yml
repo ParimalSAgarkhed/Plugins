@@ -15,16 +15,16 @@ stages:
 
         steps:
         - task: HCLAppScanPluginsQA.ApplicationSecurity-VSTS.custom-asoc-task.HCLAppScanOnCloud@2
-        displayName: 'Run HCL AppScan on Cloud Security Test'
-        inputs:
-          AppSecTestService: 'ASoC_Stage'
-          applications: '8994d026-1dd5-4642-9c0e-ec775ae97e66'
-          scanname: 'DAST_201'
-          scantype: dynamic
-          scanURL: 'http://demo.testfire.net'
-          OpenSourceScanOnly: false
-          ScanSpeedOptions: simple
-          type: production
-          optimization: fastest
+          displayName: 'Run HCL AppScan on Cloud Security Test'
+          inputs:
+            AppSecTestService: 'ASoC_Stage'
+            applications: '8994d026-1dd5-4642-9c0e-ec775ae97e66'
+            scanname: 'DAST_201'
+            scantype: dynamic
+            scanURL: 'http://demo.testfire.net'
+            OpenSourceScanOnly: false
+            ScanSpeedOptions: simple
+            type: production
+            optimization: fastest
             
 
