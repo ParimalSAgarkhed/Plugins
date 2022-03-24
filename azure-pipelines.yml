@@ -7,10 +7,10 @@ trigger:
 - master
 
 stages:
-  - stage: Security_Test
-    displayName: 'Stage1'
+  - stage: DAST
+    displayName: 'Stage_DAST'
     jobs:
-      - job: execSecurityTest
+      - job: Stage_DAST
         pool:
           name: TFS_206_Agent
 
@@ -28,23 +28,22 @@ stages:
             network: 'public'
             optimization: 'fastest'
             
-  - stage: Security_Test1
-    displayName: 'Stage2'
+  - stage: SAST
+    displayName: 'Stage_SAST'
     jobs:
-        - job: execSecurityTest1
+        - job: Stage_SAST
           pool:
             name: TFS_206_Agent
 
           steps:
-          - task: HCLAppScanOnCloud@2
-            inputs:
-              AppSecTestService: 'ASoC_Prod'
-              applications: '92abe340-b3cd-4267-afa2-6e9f1e0b49dd'
-              scanname: 'DTF_Rel_Pip'
-              scantype: 'dynamic'
-              scanURL: 'http://demo.testfire.net?mode=demo'
-              dynamicType: 'DAST'
-              type: 'production'
-              loginMethod: 'None'
-              network: 'public'
-              optimization: 'fastest'
+        - task: HCLAppScanOnCloud@2
+          inputs:
+            AppSecTestService: 'ASoC_Prod'
+            applications: '92abe340-b3cd-4267-afa2-6e9f1e0b49dd'
+            scanname: 'SAST_YAML'
+            scantype: 'static'
+            scanloc: 'Altoro_WAR'
+            OpenSourceScanOnly: true
+            ScanSpeedOptions: 'simple'
+
+
