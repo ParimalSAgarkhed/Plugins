@@ -6,23 +6,28 @@
 trigger:
 - master
 
-pool:
-  name: TFS_206_Agent
+stages:
+  - stage:Security_Test
+    jobs:
+      - job: execSecurityTest
+          pool:
+        name: TFS_206_Agent
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+      steps:
+      - script: echo Hello, world!
+        displayName: 'Run a one-line script'
 
-- task: HCLAppScanPluginsQA.ApplicationSecurity-VSTS.custom-asoc-task.HCLAppScanOnCloud@2
-  displayName: 'Run HCL AppScan on Cloud Security Test'
-  inputs:
-    AppSecTestService: 'ASoC_Stage'
-    applications: '8994d026-1dd5-4642-9c0e-ec775ae97e66'
-    scanname: 'DAST_201'
-    scantype: dynamic
-    scanURL: 'http://demo.testfire.net'
-    OpenSourceScanOnly: false
-    ScanSpeedOptions: simple
-    type: production
-    optimization: fastest
+      - task: HCLAppScanPluginsQA.ApplicationSecurity-VSTS.custom-asoc-task.HCLAppScanOnCloud@2
+        displayName: 'Run HCL AppScan on Cloud Security Test'
+        inputs:
+          AppSecTestService: 'ASoC_Stage'
+          applications: '8994d026-1dd5-4642-9c0e-ec775ae97e66'
+          scanname: 'DAST_201'
+          scantype: dynamic
+          scanURL: 'http://demo.testfire.net'
+          OpenSourceScanOnly: false
+          ScanSpeedOptions: simple
+          type: production
+          optimization: fastest
+            
 
