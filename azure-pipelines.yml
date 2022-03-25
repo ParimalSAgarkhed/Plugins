@@ -6,7 +6,26 @@
 trigger:
 - master
 
+
+
 stages:
+
+  - stage: MAST
+    displayName: 'Stage_MAST'
+    jobs:
+        - job: Stage_MAST
+          pool:
+            name: TFS_206_Agent
+
+          steps:
+          - task: HCLAppScanOnCloud@2
+            inputs:
+              AppSecTestService: 'ASoC_Prod'
+              applications: '92abe340-b3cd-4267-afa2-6e9f1e0b49dd'
+              scanname: 'MAST_205'
+              scantype: 'mobile'
+              appFile: 'C:\Testdata\demo.apk'
+
   - stage: DAST
     displayName: 'Stage_DAST'
     jobs:
@@ -45,5 +64,3 @@ stages:
               scanloc: 'Altoro_WAR'
               OpenSourceScanOnly: true
               ScanSpeedOptions: 'simple'
-
-
