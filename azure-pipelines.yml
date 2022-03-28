@@ -4,62 +4,30 @@
 # https://aka.ms/yaml
 
 trigger:
-- master
+- main
+
+pool: TFS_206_Agent
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
 
 
-stages:
+- task: HCL AppScan Enterprise@2
+  inputs:
+    ServiceEndPointAse: 'ASE_automation'
+    jobName: 'ASE_YAML_WebGoat'
+    folderId: $(ASE_FOLDER)
+    templateId: 13
+    testPolicyId: 8
+    applicationId: $(ASE_APPLICATIONID)
+    startingURL: 'http://10.115.153.71:18080/WebGoat/login'
+    loginMethod: 'None'
+    optimization: 'Fastest'
 
-  - stage: MAST
-    displayName: 'Stage_MAST'
-    jobs:
-        - job: Stage_MAST
-          pool:
-            name: TFS_206_Agent
 
-          steps:
-          - task: HCLAppScanOnCloud@2
-            inputs:
-              AppSecTestService: 'ASoC_Prod'
-              applications: '92abe340-b3cd-4267-afa2-6e9f1e0b49dd'
-              scanname: 'MAST_205'
-              scantype: 'mobile'
-              appFile: 'C:\Testdata\demo.apk'
-
-  - stage: DAST
-    displayName: 'Stage_DAST'
-    jobs:
-      - job: Stage_DAST
-        pool:
-          name: TFS_206_Agent
-
-        steps:
-        - task: HCLAppScanOnCloud@2
-          inputs:
-            AppSecTestService: 'ASoC_Prod'
-            applications: '92abe340-b3cd-4267-afa2-6e9f1e0b49dd'
-            scanname: 'DTF_Rel_Pip'
-            scantype: 'dynamic'
-            scanURL: 'http://demo.testfire.net?mode=demo'
-            dynamicType: 'DAST'
-            type: 'production'
-            loginMethod: 'None'
-            network: 'public'
-            optimization: 'fastest'
-            
-  - stage: SAST
-    displayName: 'Stage_SAST'
-    jobs:
-        - job: Stage_SAST
-          pool:
-            name: TFS_206_Agent
-
-          steps:
-          - task: HCLAppScanOnCloud@2
-            inputs:
-              AppSecTestService: 'ASoC_Prod'
-              applications: '92abe340-b3cd-4267-afa2-6e9f1e0b49dd'
-              scanname: 'SAST_YAML'
-              scantype: 'static'
-              scanloc: 'Altoro_WAR'
-              OpenSourceScanOnly: true
-              ScanSpeedOptions: 'simple'
