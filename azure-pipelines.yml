@@ -20,8 +20,8 @@ steps:
 
 - task: HCLAppScanOnCloud@2
   inputs:
-    AppSecTestService: 'ASoC_Mirror'
-    applications: 'cc802ac1-9a1b-42c4-971c-74f774e035c5'
+    AppSecTestService: 'ASoC_Prod'
+    applications: '92abe340-b3cd-4267-afa2-6e9f1e0b49dd'
     scanname: 'DAST_YAML_205'
     scantype: 'dynamic'
     dynamicType: 'DAST'
@@ -34,8 +34,8 @@ steps:
 
 - task: HCLAppScanOnCloud@2
   inputs:
-    AppSecTestService: 'ASoC_Mirror'
-    applications: 'cc802ac1-9a1b-42c4-971c-74f774e035c5'
+    AppSecTestService: 'ASoC_Prod'
+    applications: '92abe340-b3cd-4267-afa2-6e9f1e0b49dd'
     scanname: 'SAST_YAML_205'
     scantype: 'static'
     scanloc: 'Altoro_WAR'
