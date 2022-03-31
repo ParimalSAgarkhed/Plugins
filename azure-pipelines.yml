@@ -18,25 +18,26 @@ steps:
   displayName: 'Run a multi-line script'
 
 
-- task: HCLAppScanOnCloud@2
+- task: HCLTechnologies.ApplicationSecurity-VSTS.custom-asoc-task.HCLAppScanOnCloud@2
+  displayName: 'Run HCL AppScan on Cloud Security Test'
   inputs:
-    AppSecTestService: 'ASoC_Prod'
-    applications: '92abe340-b3cd-4267-afa2-6e9f1e0b49dd'
-    scanname: 'DAST_YAML_205'
-    scantype: 'dynamic'
-    dynamicType: 'DAST'
-    scanURL: 'http://demo.testfire.net/'
-    type: 'production'
-    loginMethod: 'None'
-    network: 'public'
-    optimization: 'fastest'
-
-
-- task: HCLAppScanOnCloud@2
-  inputs:
-    AppSecTestService: 'ASoC_Prod'
-    applications: '92abe340-b3cd-4267-afa2-6e9f1e0b49dd'
-    scanname: 'SAST_YAML_205'
-    scantype: 'static'
+    AppSecTestService: 'ASoC_Stage'
+    applications: '8994d026-1dd5-4642-9c0e-ec775ae97e66'
+    scanname: 'OSS_TFS_206_YAML'
     scanloc: 'Altoro_WAR'
-    ScanSpeedOptions: 'simple'
+    OpenSourceScanOnly: true
+    ScanSpeedOptions: simple
+
+
+- task: HCLTechnologies.ApplicationSecurity-VSTS.custom-ase-task.HCL AppScan Enterprise@2
+  displayName: 'Run HCL AppScan Enterprise Security Test'
+  inputs:
+    ServiceEndPointAse: 'ASE_227'
+    jobName: 'TFS_ASE_206_YAML'
+    folderId: 4
+    templateId: 13
+    testPolicyId: 8
+    applicationId: 74
+    startingURL: 'http://10.115.153.71:18080/WebGoat/login'
+    loginMethod: None
+    optimization: Fastest
